@@ -1,0 +1,77 @@
+<div class="container" class="thecontainer">
+    <div>
+        <h2>Modifier un utilisateur :</h2>
+        <div class="alert alert-danger" *ngIf="err==1">
+            <strong>username existe déja..</strong>
+            </div>
+    </div>
+    <form>
+        <div class="col-12 theInput" >
+            <label>ID User</label>
+            <input readonly type="text" [(ngModel)]="user.user_id" name="user_id" class="form-control">
+        </div>
+        <div class="col-12 theInput">
+            <label>username</label>
+            <input type="text" [(ngModel)]="user.username" name="username" class="form-control">
+        </div>
+        <div class="col-12 theInput">
+            <label>Roles</label>
+            <select class="form-control form-control-lg"
+            [(ngModel)]="r" name="r"
+            >
+         
+            
+             <option value="USER"  >USER </option>
+             <option value="ADMIN" >ADMIN </option>
+             
+            </select>
+            </div>
+            <div class="row">
+                <div class="mt-2 mb-2 col-6">
+                    <button  type="button" class="btn btn-success" (click)="addRole(user.user_id)">Ajouter un role</button>
+                   </div>
+               
+            </div>
+            
+
+        <div class="col-12 theInput">
+            
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr class="tableHeader">
+                           
+                            
+                            <th>Roles</th>
+                           
+                            <th></th>
+                           
+        
+                        </tr>
+                        <tbody *ngFor="let r of user.roles">
+                            <tr>
+                                <td>{{r.role}}</td>
+        
+                
+                                <td ><a  class="btn btn-danger" (click)="deleteRole(r.role)" >Supprimer</a></td>
+            
+                                
+                            </tr>
+                        </tbody>
+        
+                    </table>
+                </div>
+            </div>
+               
+
+        
+          
+        </div>
+    
+
+
+      
+        
+    </form>
+
+</div>

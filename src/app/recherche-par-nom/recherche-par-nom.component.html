@@ -1,0 +1,33 @@
+<!-- <div class="container">
+    
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Food en tapant</label>
+        <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+    </form>
+
+
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date de préparation</th> <th>Choix</th> </tr>
+    </thead>
+    <tbody *ngFor="let food of food | filter : searchTerm ">
+    
+    <tr>
+    <td>{{food.idFood}}</td>
+    <td>{{food.nomFood}}</td>
+    <td>{{food.prixFood}}</td>
+    <td>{{food.datePreparation | date:'dd/MM/yyyy'}}</td>
+     <td>{{food.choix?.nomChoix}}</td>
+     <td><a class="btn btn-danger" (click)="supprimerfood(food)">Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updatefood',food.idFood]">Modifier</a></td> 
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+        -->

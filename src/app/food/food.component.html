@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date de préparation</th> <th>Choix</th><th>Image</th> </tr>
+    </thead>
+    <tbody *ngFor="let food of food">
+    
+    <tr>
+    <td>{{food.idFood}}</td>
+    <td>{{food.nomFood}}</td>
+    <td>{{food.prixFood}}</td>
+    <td>{{food.datePreparation | date:'dd/MM/yyyy'}}</td>
+     <td>{{food.choix?.nomChoix}}</td>
+      <td><img class="card-img-top img-responsive" src="{{food.imageStr}}"
+        style = "height :50px;width:100px"> 
+    </td> 
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerfood(food)">Supprimer</a></td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updatefood',food.idFood]">Modifier</a></td>
+    
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

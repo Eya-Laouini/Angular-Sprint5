@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="text-center">Liste des Utilisateurs</h1>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr class="tableHeader">
+                    <th>Id</th>
+                    <th>username</th>
+                    <th>Roles</th>
+                   
+                    <th></th>
+                    <th></th>
+
+                </tr>
+                <tbody *ngFor="let u of users">
+                    <tr>
+                        <td>{{u.user_id}}</td>
+                        <td>{{u.username}}</td>
+                        <td>
+                            <span *ngFor="let r of u.roles">{{r.role}} </span>
+                        </td>
+                    
+
+
+        
+                        <td ><a  class="btn btn-danger" (click)="onDeleteUser(u.user_id)" >Supprimer</a></td>
+                        <td ><a class="btn btn-warning"  [routerLink]="['/updateUser',u.user_id]">Modifier</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
